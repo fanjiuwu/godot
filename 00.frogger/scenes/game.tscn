@@ -2,10 +2,24 @@
 
 [ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://graphics/map.png" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dghd7rii024ea" path="res://scenes/player.tscn" id="2_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://bx2rg78cu21y2" path="res://scenes/ExerciseObject.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://bx2rg78cu21y2" path="res://scenes/tree.tscn" id="3_lnu2h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbkd3"]
+size = Vector2(450, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6ack"]
+size = Vector2(20, 682)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yrbh"]
+size = Vector2(20, 690)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6bum"]
+size = Vector2(484, 20)
 
 [node name="Game" type="Node2D" unique_id=206744984]
 position = Vector2(-22, -86)
+metadata/_edit_vertical_guides_ = [-214.0]
+metadata/_edit_horizontal_guides_ = [-407.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=996609407]
 texture = ExtResource("1_yqjtg")
@@ -15,3 +29,23 @@ position = Vector2(89, 194)
 
 [node name="Player" parent="." unique_id=596181575 instance=ExtResource("2_lnu2h")]
 position = Vector2(31, 174)
+
+[node name="Borders" type="Node2D" parent="." unique_id=157823846]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders" unique_id=1550742692]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=697846337]
+position = Vector2(-1, -329)
+shape = SubResource("RectangleShape2D_bbkd3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=1966803472]
+position = Vector2(202, 9)
+shape = SubResource("RectangleShape2D_x6ack")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=1836333088]
+position = Vector2(-202, 2)
+shape = SubResource("RectangleShape2D_6yrbh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=1619876823]
+position = Vector2(10, 330)
+shape = SubResource("RectangleShape2D_i6bum")

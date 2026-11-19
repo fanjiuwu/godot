@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://bx2rg78cu21y2"]
 
 [ext_resource type="Texture2D" uid="uid://d0so81ys3820n" path="res://graphics/objects/tree1.png" id="1_avsvi"]
-[ext_resource type="Script" uid="uid://btcv4jfdtv7s3" path="res://scenes/exercise_object.gd" id="1_i6qkw"]
 [ext_resource type="Texture2D" uid="uid://y3ndpd5bhsi3" path="res://graphics/objects/tree2.png" id="2_viusy"]
 [ext_resource type="Texture2D" uid="uid://y78osdw0bolc" path="res://graphics/objects/box1.png" id="3_qd6xs"]
 
-[node name="ExerciseObject" type="Node2D" unique_id=2040501767]
-script = ExtResource("1_i6qkw")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yrbh"]
+size = Vector2(6, 7)
+
+[node name="Tree" type="StaticBody2D" unique_id=1272033023]
 
 [node name="Tree1" type="Sprite2D" parent="." unique_id=358448218]
 texture = ExtResource("1_avsvi")
@@ -18,3 +19,7 @@ texture = ExtResource("2_viusy")
 [node name="Box1" type="Sprite2D" parent="." unique_id=2025637799]
 position = Vector2(63, 10)
 texture = ExtResource("3_qd6xs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=840890156]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_6yrbh")

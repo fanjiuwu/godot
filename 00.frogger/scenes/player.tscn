@@ -3,9 +3,22 @@
 [ext_resource type="Texture2D" uid="uid://bkgrir378horu" path="res://graphics/player/player_simple.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bs54d5cs448ig" path="res://scenes/player.gd" id="2_g2els"]
 
-[node name="Player" type="Node2D" unique_id=596181575]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yrbh"]
+size = Vector2(10, 12)
+
+[node name="Player" type="CharacterBody2D" unique_id=1646690890]
 script = ExtResource("2_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2029210412]
-scale = Vector2(6, 6)
 texture = ExtResource("1_3vyb7")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1514586924]
+zoom = Vector2(4, 4)
+limit_left = -214
+limit_top = -400
+limit_right = 214
+limit_bottom = 400
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1410073581]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_6yrbh")
