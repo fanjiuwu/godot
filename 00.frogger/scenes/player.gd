@@ -28,8 +28,6 @@ func animation():
 			if direction.y>0:
 				$AnimatedSprite2D.animation='down'
 	
-			
-		
 	else:
 		$AnimatedSprite2D.frame=0
 # Called when the node enters the scene tree for the first time.
