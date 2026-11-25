@@ -14,12 +14,9 @@ func get_input():
 		shoot.emit(position,get_local_mouse_position().normalized())
 		$ReloadTimer.start()
 		
-
-
 func apply_gravity(delta):
 	velocity.y += gravity * delta
-
-
+	
 func _physics_process(delta: float) -> void:
 	get_input()
 	velocity.x = direction_x * speed
@@ -29,4 +26,7 @@ func _physics_process(delta: float) -> void:
 	
 func animation():
 	$Legs.flip_h=direction_x<0
-	$AnimationPlayer.current_animation='run' if direction_x else 'idle'
+	if is_on_floor():
+		$AnimationPlayer.current_animation='run' if direction_x else 'idle'
+	else:
+		$AnimationPlayer.current_animation='jump'
